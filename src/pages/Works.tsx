@@ -9,7 +9,7 @@ const Works: VFC = () => {
       <ul>
         {works.map((work) => (
           <li key={work.id}>
-            <Link to={`/work/${work.id}`}>{work.name}</Link>
+            <Link to={`/works/${work.id}`}>{work.name}</Link>
           </li>
         ))}
       </ul>
