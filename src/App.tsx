@@ -1,24 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import History from "./pages/History";
+import Skills from "./pages/Skills";
+import Works from "./pages/Works";
+import Work from "./pages/Work";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <ul>
+          <li>
+            <Link to="/">ホーム</Link>
+          </li>
+          <li>
+            <Link to="/history">経歴</Link>
+          </li>
+          <li>
+            <Link to="/skills">スキル</Link>
+          </li>
+          <li>
+            <Link to="/works">実績</Link>
+          </li>
+        </ul>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/history">
+            <History />
+          </Route>
+          <Route exact path="/skills">
+            <Skills />
+          </Route>
+          <Route exact path="/works">
+            <Works />
+          </Route>
+          <Route path="/works/:id">
+            <Work />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
