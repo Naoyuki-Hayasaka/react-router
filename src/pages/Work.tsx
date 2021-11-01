@@ -1,6 +1,6 @@
 import { VFC } from "react";
 import { useParams } from "react-router-dom";
-import works, { Data } from "../data/works";
+import works, { TrackRecord } from "../data/works";
 
 type ID = {
   id: string;
@@ -8,7 +8,7 @@ type ID = {
 
 const Work: VFC = () => {
   const { id } = useParams<ID>();
-  const data: Data = works[Number(id)];
+  const data: TrackRecord = works[Number(id)];
 
   return (
     <div>

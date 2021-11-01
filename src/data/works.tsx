@@ -1,10 +1,10 @@
-export type Data = {
+export type TrackRecord = {
   id: number;
   name: string;
   url: string;
 };
 
-const works: Data[] = [
+const works: TrackRecord[] = [
   {
     id: 0,
     name: "自己紹介ページ",
